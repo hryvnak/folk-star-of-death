@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import theme from "../../../theme";
-import { StyledNavLink } from "../../NavLink/NavLink.styles";
+import { StyledNavLink } from "../../NavLink/index.styles";
 
 export const StyledMainNavBarLink = styled(StyledNavLink)`
   width: 100%;
