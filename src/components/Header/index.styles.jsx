@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import theme from '../../theme';
 import { hexToRgba } from '../../utils';
 
-export const StyledHeader = styled.div`
+export const StyledHeader = styled.header`
 	display: block;
 	width: 100%;
 	height: 70px;

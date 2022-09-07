@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Logo from "../Logo";
-import MainNav from "../MainNav/MainNav";
+import MainNav from "../MainNav";
 import HeaderWrapper from "./Wrapper";
 import { StyledHeader } from "./index.styles";
 import { useLocation } from "react-router-dom";
