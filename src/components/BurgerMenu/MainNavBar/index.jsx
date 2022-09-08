@@ -9,9 +9,17 @@ const MainNavBar = ({ closeMenuWrapper }) => {
   return (
 		<StyledMainNavBar>
       {
-        routes.map((route) => 
-          <Link onClick={ closeMenuWrapper } key={ uniqueId() } to={ route.path }>{ route.name }</Link>
-        )
+        Object.entries(routes).map(([routeKey, routeValue]) => {
+          return (
+            <Link 
+              onClick={ closeMenuWrapper }
+              key={ uniqueId() } 
+              to={ routeValue.path }
+            >
+              { routeValue.name }
+            </Link>
+          )
+        })
       }
 		</StyledMainNavBar>
 	)

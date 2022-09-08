@@ -8,9 +8,16 @@ const MainNav = () => {
   return (
 		<StyledMainNav>
       {
-        routes.map((route) => 
-          <NavLink key={ uniqueId() } to={ route.path }>{ route.name }</NavLink>
-        )
+        Object.entries(routes).map(([routeKey, routeValue]) => {
+          return (
+            <NavLink 
+              key={ uniqueId() } 
+              to={ routeValue.path }
+            >
+              { routeValue.name }
+            </NavLink>
+          )
+        })
       }
 		</StyledMainNav>
 	)
