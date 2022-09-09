@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 import { StyledMainNavLink } from './index.styles';
 
 const NavLink = (props) => {
-  const { children, to } = props;
+  const { children, to, onClick } = props;
   return (
-    <StyledMainNavLink to={ to }>
+    <StyledMainNavLink onClick={onClick} to={ to }>
       { children }
     </StyledMainNavLink>
   )
@@ -13,6 +13,7 @@ const NavLink = (props) => {
 NavLink.propTypes = {
   children: PropTypes.node,
   to: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 export default NavLink;

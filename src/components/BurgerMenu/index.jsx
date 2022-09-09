@@ -36,6 +36,11 @@ const BurgerMenu = () => {
     }
   })
 
+  const handlerClose = () => {
+    setOpen(false);
+    window.scrollTo(0, 0)
+  }
+
   return (
     <>
       <StyledShadow className={ isOpen ? "visible" : "hidden" } />
@@ -46,7 +51,7 @@ const BurgerMenu = () => {
           ariaLabel={ isOpen ? "Закрити меню" : "Відкрити меню" } 
         />
         <MenuWrapper className={ isOpen ? "open" : "closed" }>
-          <MainNavBar closeMenuWrapper={ () => setOpen(false) } />
+          <MainNavBar closeMenuWrapper={ handlerClose } />
         </MenuWrapper>
       </div>
     </>

@@ -11,6 +11,7 @@ const MainNav = () => {
         Object.entries(routes).map(([routeKey, routeValue]) => {
           return (
             <NavLink 
+              onClick={() => window.scrollTo(0, 0)}
               key={ uniqueId() } 
               to={ routeValue.path }
             >
