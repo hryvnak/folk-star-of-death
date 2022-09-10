@@ -1,11 +1,16 @@
 import { StyledLogo } from "./index.styles";
 import logoSrc from '../../assets/images/Logo.png';
+import { animateScroll } from "react-scroll";
+import { StyledElement } from "./Element/index.styles";
+import { routes } from "../../routes";
 
 const Logo = () => {
   return (
-    <StyledLogo to="/">
-      <img src={logoSrc} alt="Логотип" />
-    </StyledLogo>
+    <StyledElement onClick={() => (animateScroll.scrollToTop())}>
+      <StyledLogo to={routes.home.path} >
+        <img src={logoSrc} alt="Логотип" />
+      </StyledLogo>
+    </StyledElement>
   )
 }
 
