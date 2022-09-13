@@ -6,6 +6,7 @@ export const StyledCopyright = styled.div`
   width: auto;
   height: auto;
   background: none;
+  text-align: center;
   font-size: 16px;
   color: ${theme.palette.light.light3};
   box-sizing: border-box;

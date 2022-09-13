@@ -67,18 +67,16 @@ const BannersCarousel = () => {
                         initial={{
                           opacity: isActive ? 1 : 0,
                           scale: isActive ? 1 : 0.25,
-                          y: isActive ? 0 : 100,
+                          y: isActive ? 0 : 50,
                         }}
                         animate={{ 
                           opacity: isActive ? 1 : 0,
                           scale: isActive ? 1 : 0.25,
-                          y: isActive ? 0 : 100,
+                          y: isActive ? 0 : 50,
                         }} 
                         transition={{
-                          delay: 1, 
+                          delay: 0.5, 
                           duration: 0.75,
-                          stiffness: 100,
-                          type: "Inertia",
                         }}
                       >
                         {slide.text.header}
