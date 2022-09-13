@@ -15,9 +15,6 @@ export const StyledHeader = styled.header`
   &.light{
     background-color: ${hexToRgba(theme.palette.white, 0.95)};
     box-shadow: 0px 0px 5px 3px ${hexToRgba(theme.palette.black, 0.1)};
-    &+*{
-      margin-top: 70px;
-    }
   }
   &.transparent{
     background-color: transparent;
