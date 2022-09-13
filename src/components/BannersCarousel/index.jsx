@@ -106,7 +106,7 @@ const BannersCarousel = () => {
           to="section1" 
           spy={true} 
           smooth={true} 
-          offset={0} 
+          offset={-70} 
           duration={500} 
         />
       </Swiper>
