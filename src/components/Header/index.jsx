@@ -23,7 +23,7 @@ const Header = () => {
   });
 
   return (
-		<StyledHeader className={location.pathname === '/' ? themeHeader : "light"}>
+    <StyledHeader className={location.pathname === '/' ? themeHeader : "light"}>
       <HeaderWrapper>
         <Logo />
         <TabletMini>
@@ -34,7 +34,7 @@ const Header = () => {
         </StartTabletMini>
       </HeaderWrapper>
     </StyledHeader>
-	)
+  )
 }
 
 export default Header;
