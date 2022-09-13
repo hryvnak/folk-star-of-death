@@ -1,30 +1,46 @@
-import PropTypes from 'prop-types';
+import { useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
 import { StyledScrollToNext } from "./index.styles";
-import { ImArrowDown2 } from "react-icons/im";
+import Link from "./Link";
 
 const ScrollToNext = (props) => {
-  const { activeClass, to, spy, smooth, offset, duration } = props;
+  const controls = useAnimation();
+
+  useEffect(() =>{
+    controls.start({
+      y: 20,
+      transition: {
+        repeat: Infinity, 
+        repeatType: "reverse", 
+        duration: 1.5 
+      },
+    })
+  })
+
   return (
     <StyledScrollToNext 
-      activeClass={activeClass} 
-      to={to} 
-      spy={spy} 
-      smooth={smooth} 
-      offset={offset} 
-      duration={duration}
+      animate={controls} 
+      onHoverStart={ 
+        () => (
+          controls.start({ 
+            y: 0, 
+            transition: {repeat: 0}
+          })
+        )
+      }
+      onHoverEnd={ 
+        () => controls.start({
+          y: 20,
+          transition: {repeat: Infinity, 
+            repeatType: "reverse", 
+            duration: 1.5 
+          },
+        })
+      }
     >
-      <ImArrowDown2 />
+      <Link {...props} />
     </StyledScrollToNext>
   )
-}
-
-ScrollToNext.propTypes = {
-  activeClass: PropTypes.string,
-  to: PropTypes.string,
-  spy: PropTypes.bool,
-  smooth: PropTypes.bool,
-  offset: PropTypes.number,
-  duration: PropTypes.number,
 }
 
 export default ScrollToNext;
