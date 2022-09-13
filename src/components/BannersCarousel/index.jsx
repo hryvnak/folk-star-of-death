@@ -15,7 +15,6 @@ import slideImage1 from '../../assets/images/banners-carousel/1.jpg';
 import slideImage2 from "../../assets/images/banners-carousel/2.jpg";
 import slideImage3 from '../../assets/images/banners-carousel/3.jpeg';
 
-
 const data = [
   {
     img: {src: slideImage1, alt: "Український супутник ICEYE", width: "3840", height: "2160"},
@@ -54,16 +53,52 @@ const BannersCarousel = () => {
           data.map((slide) => {
             return (
               <SwiperSlide key={uniqueId()}>
-                <SlideImageWrapper 
-                  src={slide.img.src} 
-                  alt={slide.img.alt} 
-                  width={slide.img.width} 
-                  height={slide.img.height} 
-                />
-                <SlideContentWrapper>
-                  <SlideHeading>{slide.text.header}</SlideHeading>
-                  <SlideDesc dangerouslySetInnerHTML={{ __html: slide.text.desc }} />
-                </SlideContentWrapper>
+                {({ isActive }) => (
+                  <>
+                    <SlideImageWrapper 
+                      active={isActive}
+                      src={slide.img.src} 
+                      alt={slide.img.alt} 
+                      width={slide.img.width} 
+                      height={slide.img.height} 
+                    />
+                    <SlideContentWrapper>
+                      <SlideHeading 
+                        initial={{
+                          opacity: isActive ? 1 : 0,
+                          scale: isActive ? 1 : 0.25,
+                          y: isActive ? 0 : 100,
+                        }}
+                        animate={{ 
+                          opacity: isActive ? 1 : 0,
+                          scale: isActive ? 1 : 0.25,
+                          y: isActive ? 0 : 100,
+                        }} 
+                        transition={{
+                          delay: 1, 
+                          duration: 0.75,
+                          stiffness: 100,
+                          type: "Inertia",
+                        }}
+                      >
+                        {slide.text.header}
+                      </SlideHeading>
+                      <SlideDesc 
+                        initial={{
+                          opacity: isActive ? 1 : 0,
+                        }}
+                        animate={{ 
+                          opacity: isActive ? 1 : 0,
+                        }} 
+                        transition={{ 
+                          delay: 2.5, 
+                          duration: 1 
+                        }}
+                        dangerouslySetInnerHTML={{ __html: slide.text.desc }} 
+                      />
+                    </SlideContentWrapper>
+                  </>
+                )}
               </SwiperSlide>
             )
           })

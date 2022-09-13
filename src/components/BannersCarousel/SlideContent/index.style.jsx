@@ -1,7 +1,8 @@
 import theme from "../../../theme";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const StyledSlideHeading = styled.div`
+export const StyledSlideHeading = styled(motion.div)`
   display: block;
   width: auto;
   height: auto;
@@ -17,7 +18,7 @@ export const StyledSlideHeading = styled.div`
   }
 `;
 
-export const StyledSlideDesc = styled.div`
+export const StyledSlideDesc = styled(motion.div)`
   display: block;
   width: auto;
   height: auto;

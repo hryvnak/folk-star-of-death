@@ -6,7 +6,7 @@ import Link from "./Link";
 const ScrollToNext = (props) => {
   const controls = useAnimation();
 
-  useEffect(() =>{
+  useEffect(() => {
     controls.start({
       y: 20,
       transition: {
@@ -21,17 +21,16 @@ const ScrollToNext = (props) => {
     <StyledScrollToNext 
       animate={controls} 
       onHoverStart={ 
-        () => (
-          controls.start({ 
-            y: 0, 
-            transition: {repeat: 0}
-          })
-        )
+        () => controls.start({ 
+          y: 0, 
+          transition: { repeat: 0 }
+        })
       }
       onHoverEnd={ 
         () => controls.start({
           y: 20,
-          transition: {repeat: Infinity, 
+          transition: {
+            repeat: Infinity, 
             repeatType: "reverse", 
             duration: 1.5 
           },
