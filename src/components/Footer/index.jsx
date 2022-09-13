@@ -10,7 +10,7 @@ const Footer = () => {
         <Copyright>
           Дизайн і фронтенд-розробка - 
           <a href="https://github.com/hryvnak/folk-star-of-death" rel="noreferrer" target="_blank">
-            Гривнак Катерина<ImGithub />
+            Гривнак&nbsp;Катерина<ImGithub />
           </a>
         </Copyright>
         <Copyright>© 2022</Copyright>
